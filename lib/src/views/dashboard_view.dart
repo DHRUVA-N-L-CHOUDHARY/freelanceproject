@@ -13,6 +13,7 @@ import 'package:freelanceproject/src/utils/widgets/widgets/custom_table_dashboar
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_table_element.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_text_field.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/imagewidget.dart';
+import 'package:freelanceproject/src/utils/widgets/widgets/profile_section.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/sidemenu_bar.dart';
 
 class DashboardPageView extends StatelessWidget {
@@ -21,127 +22,82 @@ class DashboardPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Sidemenubar(),
+       drawer: const Sidemenubar(),
       appBar: const AppBarTemplate(
         text: "Dashboard",
         option: 2,
+        optionbutton: 1,
       ),
       body: ListView(
         // ignore: prefer_const_literals_to_create_immutables
         children: <Widget>[
-          const CustomTableDashboard(),
-          const SizedBox(
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: const ProfileSection(),
+          ),
+          SizedBox(
             height: 20,
           ),
-          const buildCard(
-            inputpic: profileimageicon,
-            height: 100,
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal:110.0,vertical: 10.0 ),
-            child: DefaultButton(
-              text: "Add User",
-            ),
-          ),
-          DataTable(
-            dividerThickness: 0.0,
-            // ignore: prefer_const_literals_to_create_immutables
-            columns: [
-              const DataColumn(
-                label: Text(
-                  'Name',
-                  style: TextStyle(
-                    fontSize: 13,
-                  ),
-                ),
-              ),
-              const DataColumn(
-                  label: Text(':  Testcuri', style: TextStyle(fontSize: 13))),
-            ],
-            // ignore: prefer_const_literals_to_create_immutables
-            rows: [
-              const DataRow(cells: [
-                DataCell(CustomTextfield(
-                    displaytxt: "Profile ID", color: Colors.black)),
-                DataCell(CustomTextfield(
-                    displaytxt: ':  2022102603', color: Colors.black)),
-              ]),
-              const DataRow(cells: [
-                DataCell(CustomTextfield(
-                    displaytxt: "Email ID", color: Colors.black)),
-                DataCell(CustomTextfield(
-                  displaytxt: ':  test1231@gmail.com',
-                  color: Colors.black,
-                )),
-              ]),
-              const DataRow(cells: [
-                DataCell(CustomTextfield(
-                    displaytxt: "Sponsor name", color: Colors.black)),
-                DataCell(CustomTextfield(
-                    displaytxt: ':  Nisham', color: Colors.black)),
-              ]),
-            ],
-          ),
+          const CustomTableDashboard(),
           const CustomTableDashboardPurple(),
-          // const CustomDashboardProfile(),
              Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomTableElement(
                   elementpic: '',
-                  elementtext: 'Pending Amount:\n 0 INR',
+                  elementtext: 'Pending Amount:\n0 INR',
                   option: true,
                   textcolor: Colors.white,
                 ),
               ],
             ),
-          Padding(
-            padding: const EdgeInsets.only(top:8.0, bottom: 3.0, right: 8.0 , left: 8.0),
-            child: Container(
-              height: 20,
-              width: double.infinity,
-              color: kPrimaryColor,
-              child: const CustomTextfield(
-                displaytxt: "ADD USERS LIST",
-                color: Colors.white,
-              ),
-            ),
-          ),
-          DataTable(
-            columnSpacing: 7,
-            columns: [
-            const DataColumn(
-                label: CustomTextfield(
-              displaytxt: "S.NO",
-              color: Colors.black,
-            )),
-            const DataColumn(
-                label: CustomTextfield(
-              displaytxt: "USERNAME",
-              color: Colors.black,
-            )),
-            const DataColumn(
-                label: CustomTextfield(
-              displaytxt: "PROFILE ID",
-              color: Colors.black,
-            )),
-            const DataColumn(
-                label: CustomTextfield(
-              displaytxt: "INVESTMENT",
-              color: Colors.black,
-            )),
-            const DataColumn(
-                label: CustomTextfield(
-              displaytxt: "DATE",
-              color: Colors.black,
-            ))
-          ], rows: []),
-          Container(
-            width: double.infinity,
-            height: 50,
-            child: const TextButton(child: Text("View More...",), onPressed: null,),
-          )
+          // Padding(
+          //   padding: const EdgeInsets.only(top:8.0, bottom: 3.0, right: 8.0 , left: 8.0),
+          //   child: Container(
+          //     height: 20,
+          //     width: double.infinity,
+          //     color: kPrimaryColor,
+          //     child: const CustomTextfield(
+          //       displaytxt: "ADD USERS LIST",
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // ),
+          // DataTable(
+          //   columnSpacing: 7,
+          //   columns: [
+          //   const DataColumn(
+          //       label: CustomTextfield(
+          //     displaytxt: "S.NO",
+          //     color: Colors.black,
+          //   )),
+          //   const DataColumn(
+          //       label: CustomTextfield(
+          //     displaytxt: "USERNAME",
+          //     color: Colors.black,
+          //   )),
+          //   const DataColumn(
+          //       label: CustomTextfield(
+          //     displaytxt: "PROFILE ID",
+          //     color: Colors.black,
+          //   )),
+          //   const DataColumn(
+          //       label: CustomTextfield(
+          //     displaytxt: "INVESTMENT",
+          //     color: Colors.black,
+          //   )),
+          //   const DataColumn(
+          //       label: CustomTextfield(
+          //     displaytxt: "DATE",
+          //     color: Colors.black,
+          //   ))
+          // ], rows: []),
+          // Container(
+          //   width: double.infinity,
+          //   height: 50,
+          //   child: const TextButton(child: Text("View More...",), onPressed: null,),
+          // )
         ],
       ),
     );

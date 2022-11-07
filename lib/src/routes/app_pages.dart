@@ -56,10 +56,10 @@ class AppPages {
         name: _Paths.DASHBOARD,
         page: () => const DashboardPageView(),
         binding: DashboardPageBinding()),
-    GetPage(
-        name: _Paths.UPLOADPROFILEPHOTO,
-        page: () => const UploadProfilePhotoView(),
-        binding: UploadProfilePhotoBinding()),
+    // GetPage(
+    //     name: _Paths.UPLOADPROFILEPHOTO,
+    //     page: () => const UploadProfilePhotoView(),
+    //     binding: UploadProfilePhotoBinding()),
     GetPage(
         name: _Paths.CHANGEPASSWORD,
         page: () => const Changepasswordview(),

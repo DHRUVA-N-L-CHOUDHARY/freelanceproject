@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:freelanceproject/src/utils/constants/constants/colors.dart';
 import 'package:freelanceproject/src/utils/constants/constants/strings.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_table_element.dart';
 
@@ -12,43 +13,49 @@ class CustomTableDashboard extends StatelessWidget {
       TableRow(children: [
         CustomTableElement(
           elementpic: walletdashboard,
-          elementtext: "1000.00 INR\n Total Wallet Balance",
-          textcolor: Colors.black,
-          color: Color.fromARGB(255, 230, 238, 156),
+          cusicon: Icons.wallet,
+          elementtext: "1000.00 INR\nTotal Wallet Balance",
+          textcolor: Colors.white,
+          color: kPrimaryColor,
         ),
         CustomTableElement(
           elementpic: connectdashboard,
-          elementtext: "0 INR\n Referal Bonus",
-          textcolor: Colors.black,
-          color: Color.fromARGB(255, 230, 238, 156),
+          cusicon: Icons.account_tree,
+          elementtext: "0 INR\nReferal Bonus",
+          textcolor: Colors.white,
+          color: kPrimaryColor,
         ),
       ]),
       TableRow(children: [
         CustomTableElement(
           elementpic: connectdashboard,
-          color: Color.fromARGB(255, 230, 238, 156),
-          elementtext: "0 INR\n Level Bonus",
-          textcolor: Colors.black,
+          cusicon: Icons.account_tree,
+          color: kPrimaryColor,
+          elementtext: "0 INR\nLevel Bonus",
+          textcolor: Colors.white,
         ),
         CustomTableElement(
           elementpic: rupeedashboard,
-          elementtext: "0 INR\n ROI",
-          color: Color.fromARGB(255, 230, 238, 156),
-          textcolor: Colors.black,
+          cusicon: Icons.attach_money_rounded,
+          elementtext: "0 INR\nROI",
+          color: kPrimaryColor,
+          textcolor: Colors.white,
         ),
       ]),
       TableRow(children: [
         CustomTableElement(
           elementpic: rupeedashboard,
-          elementtext: "0 INR\n Add User commission",
-          textcolor: Colors.black,
-          color: Color.fromARGB(255, 230, 238, 156),
+          cusicon: Icons.attach_money_rounded,
+          elementtext: "0 INR\nAdd User commission",
+          textcolor: Colors.white,
+          color: kPrimaryColor,
         ),
         CustomTableElement(
             elementpic: moneydashboard,
-            color: Color.fromARGB(255, 230, 238, 156),
-            textcolor: Colors.black,
-            elementtext: "0 INR\n Widthdrawal Approved"),
+            cusicon: Icons.credit_card_rounded,
+            color: kPrimaryColor,
+            textcolor: Colors.white,
+            elementtext: "0 INR\nWidthdrawal Approved"),
       ]),
     ]);
   }

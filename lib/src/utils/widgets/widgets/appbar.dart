@@ -19,7 +19,7 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
       this.requiredicon = Icons.abc,
       this.optionbutton = 1,
       this.onPressed,
-      this.appbarpic, 
+      this.appbarpic,
       this.backcolor = kPrimaryColor})
       : super(key: key);
 
@@ -28,10 +28,11 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
     if (option == 1) {
       return AppBar(
         // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+        //   icon: const Icon(Icons.arrow_back_ios, color: kPrimaryColor),
         //   onPressed: () => Navigator.of(context).pop(null),
         // ),
         backgroundColor: backcolor,
+        automaticallyImplyLeading: false,
         title: Text(
           text,
           style: const TextStyle(
@@ -45,6 +46,7 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(null),
         ),
+          automaticallyImplyLeading: false,
         backgroundColor: backcolor,
         title: Text(
           text,
@@ -56,24 +58,12 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
     } else {
       if (optionbutton == 1) {
         return AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(null),
-            padding: const EdgeInsets.all(0.0),
+          title: Text(
+            text,
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20),
           ),
-           title: Text(
-          text,
-          style: const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20),
-        ),
           backgroundColor: backcolor,
-          // actions: <Widget>[
-          //   IconButton(
-          //     icon: Icon(requiredicon),
-          //     color: kPrimaryColor,
-          //     onPressed: (() {}),
-          //   ),
-          // ],
           centerTitle: true,
         );
       } else {
@@ -83,6 +73,7 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
             onPressed: () => Navigator.of(context).pop(null),
             padding: const EdgeInsets.all(0.0),
           ),
+          automaticallyImplyLeading: false,
           title: Image.asset(
             appbarpic!,
             height: 70,

@@ -13,14 +13,14 @@ class CustomTableDashboardPurple extends StatelessWidget {
         CustomTableElement(
           elementpic: walletdashboard,
           option: true,
-          elementtext: "Investment Amount: \n 1000 INR",
+          elementtext: "Investment Amount: \n1000 INR",
           color: kPrimaryColor,
           textcolor: Colors.white,
         ),
         CustomTableElement(
             elementpic: connectdashboard,
             option: true,
-            elementtext: "Level Bonus:\n 0 INR",
+            elementtext: "Level Bonus:\n0 INR",
             color: kPrimaryColor,
             textcolor: Colors.white),
       ]),
@@ -28,13 +28,13 @@ class CustomTableDashboardPurple extends StatelessWidget {
         CustomTableElement(
             elementpic: connectdashboard,
             option: true,
-            elementtext: "Wallet Balance: \n 1000 INR",
+            elementtext: "Wallet Balance: \n1000 INR",
             color: kPrimaryColor,
             textcolor: Colors.white),
         CustomTableElement(
             elementpic: rupeedashboard,
             option: true,
-            elementtext: "Withdraw amount :\n 0 INR",
+            elementtext: "Withdraw amount :\n0 INR",
             color: kPrimaryColor,
             textcolor: Colors.white),
       ]),

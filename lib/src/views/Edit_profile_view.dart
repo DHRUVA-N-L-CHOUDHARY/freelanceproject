@@ -15,7 +15,7 @@ class EditprofileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Sidemenubar(),
+      // endDrawer: Sidemenubar(),
       appBar: AppBarTemplate(
         text: "Edit Profile",
         option: 2,
@@ -33,11 +33,12 @@ class EditprofileView extends StatelessWidget {
                 height: 20,
               ),
               CustomTextfield(
-                displaytxt: "Personal details",
+                displaytxt: "PERSONAL DETAILS",
                 color: Colors.black,
+                fontsize: 20,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: CustomTableEditProfileView(),
               ),
               DefaultButton(

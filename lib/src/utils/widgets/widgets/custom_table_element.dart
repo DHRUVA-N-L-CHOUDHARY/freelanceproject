@@ -9,6 +9,7 @@ import 'package:freelanceproject/src/utils/widgets/widgets/imagewidget.dart';
 class CustomTableElement extends StatelessWidget {
   final String elementpic;
   final String elementtext;
+  final IconData? cusicon;
   final Color? color;
   bool? option;
   final Color? textcolor;
@@ -18,7 +19,8 @@ class CustomTableElement extends StatelessWidget {
       required this.elementtext,
       this.color = kPrimaryColor,
       this.option = false,
-      this.textcolor = const Color.fromARGB(0, 0, 0, 0)});
+      this.textcolor = const Color.fromARGB(0, 0, 0, 0),
+      this.cusicon = Icons.wallet});
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +37,12 @@ class CustomTableElement extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             child: Row(children: [
               //  buildCard(inputpic: elementpic, height: 20),
-              CustomTextfield(
-                displaytxt: elementtext,
-                color: textcolor,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomTextfield(
+                  displaytxt: elementtext,
+                  color: textcolor,
+                ),
               )
             ]),
           ),
@@ -55,7 +60,14 @@ class CustomTableElement extends StatelessWidget {
                 color: color,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             child: Row(children: [
-              buildCard(inputpic: elementpic, height: 20),
+              Icon(
+                cusicon,
+                color: Colors.white,
+              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal:3.0),
+              //   child: buildCard(inputpic: elementpic, height: 20),
+              // ),
               CustomTextfield(displaytxt: elementtext, color: textcolor)
             ]),
           ),

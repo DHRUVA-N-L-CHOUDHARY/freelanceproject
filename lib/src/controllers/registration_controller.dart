@@ -1,6 +1,5 @@
-
-
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:freelanceproject/src/model/user_model.dart';
@@ -11,9 +10,8 @@ import 'package:freelanceproject/src/utils/widgets/widgets/custom_loading.dart';
 import 'package:freelanceproject/src/views/login_view.dart';
 import 'package:get/get.dart';
 
-
 class RegistrationController extends GetxController {
-   final formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   AuthService authService = AuthService();
   DatabaseMethods databaseMethods = DatabaseMethods();
 
@@ -27,9 +25,10 @@ class RegistrationController extends GetxController {
   TextEditingController lastnameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController investamountController = TextEditingController();
-  
-  Usermodel ? usermodel;
+
+  Usermodel? usermodel;
   bool isSecure = true;
+  bool move = false;
 
   @override
   void onInit() {
@@ -72,12 +71,6 @@ class RegistrationController extends GetxController {
           usermodel?.investamount = investamountController.text;
           usermodel?.userid = result.uid;
 
-          // Map<String, dynamic> userDataMap = {
-          //   "UserId": result.uid,
-            
-          //   "userEmail": emailController.text
-          // };
-
           databaseMethods.addUserInfo(usermodel);
 
           Get.offAll(LoginView());
@@ -85,5 +78,4 @@ class RegistrationController extends GetxController {
       });
     }
   }
-
 }

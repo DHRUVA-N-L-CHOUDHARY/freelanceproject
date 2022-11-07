@@ -44,46 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA29mA6NliHqi3eHhtCLaZSsVK0YjuRuC8',
-    appId: '1:690923108196:web:9bdfcf5aff0a3d7712ac71',
-    messagingSenderId: '690923108196',
-    projectId: 'capitalholdingco-ac8ad',
-    authDomain: 'capitalholdingco-ac8ad.firebaseapp.com',
-    databaseURL: 'https://capitalholdingco-ac8ad-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'capitalholdingco-ac8ad.appspot.com',
-    measurementId: 'G-9LWERX6S5X',
+    apiKey: 'AIzaSyB7ghp41MH7aSApTSjnfJV55s9srxjx8uE',
+    appId: '1:436952571459:web:2672ffd47b926e72553ef6',
+    messagingSenderId: '436952571459',
+    projectId: 'freelanceproject-21af8',
+    authDomain: 'freelanceproject-21af8.firebaseapp.com',
+    storageBucket: 'freelanceproject-21af8.appspot.com',
+    measurementId: 'G-R81E8ZMPN8',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD4Da2svFQBFac4octHaduGVsCRdJSRFmc',
-    appId: '1:690923108196:android:7aa464e987e64a7012ac71',
-    messagingSenderId: '690923108196',
-    projectId: 'capitalholdingco-ac8ad',
-    databaseURL: 'https://capitalholdingco-ac8ad-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'capitalholdingco-ac8ad.appspot.com',
+    apiKey: 'AIzaSyD73e954rGm7h3T1Jw9i5656R2-oPXVX6k',
+    appId: '1:436952571459:android:9b6a41b104e385e0553ef6',
+    messagingSenderId: '436952571459',
+    projectId: 'freelanceproject-21af8',
+    storageBucket: 'freelanceproject-21af8.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCyZUV-gQ3fFqTlMm_9DDdIrCu365QjGSI',
-    appId: '1:690923108196:ios:0a19462b991557e512ac71',
-    messagingSenderId: '690923108196',
-    projectId: 'capitalholdingco-ac8ad',
-    databaseURL: 'https://capitalholdingco-ac8ad-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'capitalholdingco-ac8ad.appspot.com',
-    androidClientId: '690923108196-44bg3nrc4svut8362quugqotf4ojkk0e.apps.googleusercontent.com',
-    iosClientId: '690923108196-evv2a1td3o13sv8trsle1f88a0kteagl.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCbpHxwCPOlflsAZB2VSb496DhZg1hN3K4',
+    appId: '1:436952571459:ios:2c7cffaabda99d62553ef6',
+    messagingSenderId: '436952571459',
+    projectId: 'freelanceproject-21af8',
+    storageBucket: 'freelanceproject-21af8.appspot.com',
+    iosClientId: '436952571459-golupinh1h3be2p8jooss45ghvpuge90.apps.googleusercontent.com',
     iosBundleId: 'com.example.freelanceproject',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCyZUV-gQ3fFqTlMm_9DDdIrCu365QjGSI',
-    appId: '1:690923108196:ios:0a19462b991557e512ac71',
-    messagingSenderId: '690923108196',
-    projectId: 'capitalholdingco-ac8ad',
-    databaseURL: 'https://capitalholdingco-ac8ad-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'capitalholdingco-ac8ad.appspot.com',
-    androidClientId: '690923108196-44bg3nrc4svut8362quugqotf4ojkk0e.apps.googleusercontent.com',
-    iosClientId: '690923108196-evv2a1td3o13sv8trsle1f88a0kteagl.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCbpHxwCPOlflsAZB2VSb496DhZg1hN3K4',
+    appId: '1:436952571459:ios:2c7cffaabda99d62553ef6',
+    messagingSenderId: '436952571459',
+    projectId: 'freelanceproject-21af8',
+    storageBucket: 'freelanceproject-21af8.appspot.com',
+    iosClientId: '436952571459-golupinh1h3be2p8jooss45ghvpuge90.apps.googleusercontent.com',
     iosBundleId: 'com.example.freelanceproject',
   );
 }

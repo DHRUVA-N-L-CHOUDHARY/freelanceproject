@@ -56,12 +56,18 @@ class Sidemenubar extends StatelessWidget {
                   onPressed: () {
                     Get.to(() => const DashboardPageView());
                   }),
+              // DrawerItem(
+              //     name: "Upload Profile Photo",
+              //     icon: Icons.photo,
+              //     onPressed: () {
+              //       Get.to(() => const UploadProfilePhotoView());
+              //     }),
               DrawerItem(
-                  name: "Upload Profile Photo",
-                  icon: Icons.photo,
-                  onPressed: () {
-                    Get.to(() => const UploadProfilePhotoView());
-                  }),
+                  name: "Logout",
+                  icon: Icons.logout_outlined,
+                  onPressed: (() {
+                    Get.toNamed("/login");
+                  })),
             ],
           ),
         ),
@@ -90,11 +96,11 @@ class Sidemenubar extends StatelessWidget {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const DashboardPageView()));
         break;
-      case 4:
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const UploadProfilePhotoView()));
+      // case 4:
+      //   Navigator.push(
+      //       context,
+      //       MaterialPageRoute(
+      //           builder: (context) => const UploadProfilePhotoView()));
         break;
       default:
         Navigator.pop(context);

@@ -1,7 +1,7 @@
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 
-class UploadProfilePhotocontroller extends GetxController 
-{
+// class UploadProfilePhotocontroller extends GetxController 
+// {
 
   
-}
+// }

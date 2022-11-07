@@ -37,9 +37,9 @@ class HomeController extends GetxController {
 
   void handleAuthStateChanged(isLoggedIn) {
     if (isLoggedIn) {
-      Get.offAllNamed(Routes.WELCOME, arguments: firebaseAuth.currentUser);
+      Get.offAllNamed(Routes.LOGIN, arguments: firebaseAuth.currentUser);
     } else {
-      Get.offAllNamed(Routes.PROFILEPAGE);
+      Get.offAllNamed(Routes.LOGIN);
     }
   }
 }

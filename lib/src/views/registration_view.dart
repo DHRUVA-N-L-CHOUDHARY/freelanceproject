@@ -1,7 +1,9 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:freelanceproject/src/controllers/registration_controller.dart';
+import 'package:freelanceproject/src/utils/constants/constants/colors.dart';
 import 'package:freelanceproject/src/utils/constants/constants/size_config.dart';
 import 'package:freelanceproject/src/utils/constants/constants/strings.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/Custom_form_field.dart';
@@ -23,8 +25,8 @@ class _RegistrationViewState extends State<RegistrationView> {
     return GetBuilder<RegistrationController>(builder: (controller) {
       return Scaffold(
         appBar: const AppBarTemplate(
-          text: "Sign In",
-          option: 2,
+          text: "Sign Up",
+          option: 1 ,
         ),
         body: Form(
           key: controller.formKey,
@@ -35,9 +37,13 @@ class _RegistrationViewState extends State<RegistrationView> {
                 child: ListView(
                   padding: const EdgeInsets.all(8.0),
                   children: [
+                    // ignore: prefer_const_constructors
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: const buildCard(inputpic: openpic,height: 200,),
+                      child: const buildCard(
+                        inputpic: openpic,
+                        height: 200,
+                      ),
                     ),
                     const Text(
                       "Sponsor id:",
@@ -156,9 +162,40 @@ class _RegistrationViewState extends State<RegistrationView> {
                       hintText: 'No file attached',
                       option: true,
                     ),
-                    DefaultButton(text: "Sign Up", margins: 5.0, press: () {
-                      controller.signUpWithEmailAndPassword();
-                    }),
+                    DefaultButton(
+                        text: "Sign Up",
+                        margins: 5.0,
+                        press: () {
+                          // controller.signUpWithEmailAndPassword();
+                          Get.toNamed("/dashboard");
+                        }),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Center(
+                        child: RichText(
+                      // ignore: prefer_const_constructors
+                      text: TextSpan(
+                        text: 'Already having an account',
+                        style: const TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: 'Login!',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: kPrimaryColor,
+                                fontSize: 17.0,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () async {
+                                  Get.toNamed("/login");
+                                }),
+                        ],
+                      ),
+                    )),
                   ],
                 ),
               ),

@@ -86,9 +86,6 @@ class _LoginViewState extends State<LoginView> {
                     const SizedBox(
                       height: 30,
                     ),
-                    // DefaultButton(text: "Sign in With Google", margins: 5.0, press: () {
-                    //   controller.login();
-                    // }),
                     Center(
                         child: RichText(
                       // ignore: prefer_const_constructors

@@ -1,50 +1,34 @@
 {
   "project_info": {
-    "project_number": "690923108196",
-    "firebase_url": "https://capitalholdingco-ac8ad-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "capitalholdingco-ac8ad",
-    "storage_bucket": "capitalholdingco-ac8ad.appspot.com"
+    "project_number": "436952571459",
+    "project_id": "freelanceproject-21af8",
+    "storage_bucket": "freelanceproject-21af8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:690923108196:android:7aa464e987e64a7012ac71",
+        "mobilesdk_app_id": "1:436952571459:android:9b6a41b104e385e0553ef6",
         "android_client_info": {
           "package_name": "com.example.freelanceproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "690923108196-44bg3nrc4svut8362quugqotf4ojkk0e.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.freelanceproject",
-            "certificate_hash": "1b54d23e7fc8e1b63a1ca418cebce56cf6c87acd"
-          }
-        },
-        {
-          "client_id": "690923108196-8kq8cbd72s4llenqjifmrsogjpav7ui8.apps.googleusercontent.com",
+          "client_id": "436952571459-etv0n9jqdf6n9d6f8qr74hop4u9u63kc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD4Da2svFQBFac4octHaduGVsCRdJSRFmc"
+          "current_key": "AIzaSyD73e954rGm7h3T1Jw9i5656R2-oPXVX6k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "690923108196-8kq8cbd72s4llenqjifmrsogjpav7ui8.apps.googleusercontent.com",
+              "client_id": "436952571459-etv0n9jqdf6n9d6f8qr74hop4u9u63kc.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "690923108196-evv2a1td3o13sv8trsle1f88a0kteagl.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.freelanceproject"
-              }
             }
           ]
         }
