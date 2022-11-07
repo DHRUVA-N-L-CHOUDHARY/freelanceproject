@@ -26,6 +26,7 @@ class CustomTableRow extends StatelessWidget {
                 label: Text('Field',
                     style:
                         TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+            const DataColumn(label: Text(":")),
             const DataColumn(
                 label: Text('Detail',
                     style:
@@ -34,64 +35,169 @@ class CustomTableRow extends StatelessWidget {
           // ignore: prefer_const_literals_to_create_immutables
           rows: [
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "First Name", color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':TestCuri',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "First Name",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: 'TestCuri',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Last Name",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':One',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Last Name",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: 'One',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Profile ID",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':2021603',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Profile ID",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '2021603',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Email ID",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':text1231@gmail.com',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Email ID",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: 'text1231@gmail.com',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Sponsor ID",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':200000',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Sponsor ID",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '200000',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Sponsor Name",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':Nisham',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Sponsor Name",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: 'Nisham',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Gender",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':Male',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Gender",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: 'Male',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "DOB",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':28-09-2022',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "DOB",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '28-09-2022',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Phone",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':9447677776',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Phone",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '9447677776',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Investment Amount",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':1000 INR',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Investment Amount",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '1000 INR',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Address",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':mpm',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Address",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: 'mpm',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Branch Name",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Branch Name",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Branch",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Branch",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "Account number",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "Account number",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '',
+                color: Colors.black,
+              )),
             ]),
             const DataRow(cells: [
-              DataCell(CustomTextfield(displaytxt: "IFSC Code",color: Colors.black,)),
-              DataCell(CustomTextfield(displaytxt: ':',color: Colors.black,)),
+              DataCell(CustomTextfield(
+                displaytxt: "IFSC Code",
+                color: Colors.black,
+              )),
+              DataCell(Text(":")),
+              DataCell(CustomTextfield(
+                displaytxt: '',
+                color: Colors.black,
+              )),
             ]),
           ],
         ),

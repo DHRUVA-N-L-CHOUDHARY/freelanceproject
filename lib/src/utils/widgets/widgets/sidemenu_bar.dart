@@ -33,7 +33,7 @@ class Sidemenubar extends StatelessWidget {
                 height: 40,
               ),
               DrawerItem(
-                  name: "Edit Profile",
+                  name: "View Profile",
                   icon: Icons.person,
                   onPressed: () {
                     Get.to(() => const ProfilepageView());
