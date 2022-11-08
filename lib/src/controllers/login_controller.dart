@@ -10,6 +10,7 @@ import 'package:freelanceproject/src/providers/local_storage.dart';
 import 'package:freelanceproject/src/services/auth.dart';
 import 'package:freelanceproject/src/services/database.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_loading.dart';
+import 'package:freelanceproject/src/views/dashboard_view.dart';
 import 'package:freelanceproject/src/views/login_view.dart';
 import 'package:freelanceproject/src/views/registration_view.dart';
 import 'package:get/get.dart';
@@ -53,25 +54,25 @@ class LoginController extends GetxController {
             print(result.toString());
           }
 
-          await PreferenceUtils.setString(keyUserId, result.uid);
-          if (kDebugMode) {
-            print("uid : ${result.uid}");
-          }
-          await PreferenceUtils.setString(keyUserEmail, "${result.email}");
+          // await PreferenceUtils.setString(keyUserId, result.uid);
+          // if (kDebugMode) {
+          //   print("uid : ${result.uid}");
+          // }
+          // await PreferenceUtils.setString(keyUserEmail, "${result.email}");
 
-          QuerySnapshot userInfoSnapshot =
-              await DatabaseMethods().getUserInfo(emailController.text);
+          // QuerySnapshot userInfoSnapshot =
+          //     await DatabaseMethods().getUserInfo(emailController.text);
 
-          final userData =
-              userInfoSnapshot.docs[0].data() as Map<String, dynamic>;
-          if (kDebugMode) {
-            print("${userData["userName"]}");
-          }
+          // final userData =
+          //     userInfoSnapshot.docs[0].data() as Map<String, dynamic>;
+          // if (kDebugMode) {
+          //   print("${userData["userName"]}");
+          // }
 
-          await PreferenceUtils.setString(
-              keyUserName, "${userData["userName"]}");
+          // await PreferenceUtils.setString(
+          //     keyUserName, "${userData["userName"]}");
 
-          Get.offAll(RegistrationView());
+          Get.offAll(const DashboardPageView());
         }
       });
     }

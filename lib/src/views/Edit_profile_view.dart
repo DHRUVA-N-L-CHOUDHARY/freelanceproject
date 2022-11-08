@@ -15,7 +15,6 @@ class EditprofileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // endDrawer: Sidemenubar(),
       appBar: AppBarTemplate(
         text: "Edit Profile",
         option: 2,

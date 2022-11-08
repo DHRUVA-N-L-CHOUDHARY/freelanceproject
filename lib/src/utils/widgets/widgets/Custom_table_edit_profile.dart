@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/Custom_form_field.dart';
+import 'package:freelanceproject/src/utils/widgets/widgets/Custom_radio_list_tile.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_table_element.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_text_field.dart';
+import 'package:freelanceproject/src/utils/widgets/widgets/date_picker/date_picker.dart';
 
 class CustomTableEditProfileView extends StatelessWidget {
   const CustomTableEditProfileView({super.key});
@@ -11,17 +13,16 @@ class CustomTableEditProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Table(
-      defaultVerticalAlignment:TableCellVerticalAlignment.middle,
+      defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       // ignore: prefer_const_literals_to_create_immutables
       columnWidths: {
-        0:const FlexColumnWidth(70),
-        1:const FlexColumnWidth(20),
+        0: const FlexColumnWidth(70),
+        1: const FlexColumnWidth(20),
         2: const FlexColumnWidth(120)
       },
-      defaultColumnWidth: const FixedColumnWidth(100.0) ,
+      defaultColumnWidth: const FixedColumnWidth(100.0),
       children: [
-        TableRow(
-          children: [
+        TableRow(children: [
           const CustomTextfield(
             displaytxt: "First Name",
             color: Colors.black,
@@ -52,22 +53,24 @@ class CustomTableEditProfileView extends StatelessWidget {
             fontsize: 15,
           ),
           const Text(":"),
-          InputTextwidget(
-            hintText: "DOB",
-            option: true,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [DatePicker()],
+              ),
+            ),
           ),
         ]),
-        TableRow(children: [
-          const CustomTextfield(
+        const TableRow(children: [
+          CustomTextfield(
             displaytxt: "Gender",
             color: Colors.black,
             fontsize: 15,
           ),
-          const Text(":"),
-          InputTextwidget(
-            hintText: "",
-            option: true,
-          ),
+          Text(":"),
+          CustomRadioListtile(),
         ]),
         TableRow(children: [
           const CustomTextfield(

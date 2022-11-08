@@ -1,11 +1,20 @@
 // ignore: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import 'package:freelanceproject/src/config/image_upload.dart';
 import 'package:freelanceproject/src/utils/constants/constants/strings.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_text_field.dart';
+import 'package:freelanceproject/src/utils/widgets/widgets/image_upload_widget.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/imagewidget.dart';
 
-class CustomTableRow extends StatelessWidget {
+class CustomTableRow extends StatefulWidget {
   const CustomTableRow({super.key});
+
+  @override
+  State<CustomTableRow> createState() => _CustomTableRowState();
+}
+
+class _CustomTableRowState extends State<CustomTableRow> {
+  bool profilePicIsLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +23,11 @@ class CustomTableRow extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        const buildCard(
-          inputpic: profileimageicon,
-          height: 120,
-        ),
+        // const buildCard(
+        //   inputpic: profileimageicon,
+        //   height: 120,
+        // ),
+        const ImageUploadWidget(),
         DataTable(
           dividerThickness: 0.0,
           // ignore: prefer_const_literals_to_create_immutables

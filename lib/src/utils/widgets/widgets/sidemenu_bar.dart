@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:freelanceproject/src/controllers/home_controller.dart';
 import 'package:freelanceproject/src/utils/constants/constants/strings.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/menu_item.dart';
 import 'package:freelanceproject/src/views/Change_password_view.dart';
 import 'package:freelanceproject/src/views/Edit_profile_view.dart';
 import 'package:freelanceproject/src/views/Upload_profile_page_photo.dart';
+import 'package:freelanceproject/src/views/add_user_list_view.dart';
 import 'package:freelanceproject/src/views/dashboard_view.dart';
 import 'package:freelanceproject/src/views/profile_page_view.dart';
 import 'package:get/get.dart';
@@ -13,6 +15,7 @@ class Sidemenubar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomeController homeController = Get.find<HomeController>();
     return Drawer(
       child: Material(
         color: Colors.black,
@@ -51,10 +54,10 @@ class Sidemenubar extends StatelessWidget {
                     Get.to(() => const Changepasswordview());
                   }),
               DrawerItem(
-                  name: "DashboardPage",
-                  icon: Icons.dashboard,
+                  name: "Add User List View",
+                  icon: Icons.add_box,
                   onPressed: () {
-                    Get.to(() => const DashboardPageView());
+                    Get.to(() => const AddUserListView());
                   }),
               // DrawerItem(
               //     name: "Upload Profile Photo",
@@ -66,7 +69,10 @@ class Sidemenubar extends StatelessWidget {
                   name: "Logout",
                   icon: Icons.logout_outlined,
                   onPressed: (() {
-                    Get.toNamed("/login");
+                    void logout() async {
+                      await homeController.firebaseAuth.signOut();
+                    }
+                    Get.offNamed("/login");
                   })),
             ],
           ),
@@ -96,11 +102,11 @@ class Sidemenubar extends StatelessWidget {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const DashboardPageView()));
         break;
-      // case 4:
-      //   Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //           builder: (context) => const UploadProfilePhotoView()));
+        // case 4:
+        //   Navigator.push(
+        //       context,
+        //       MaterialPageRoute(
+        //           builder: (context) => const UploadProfilePhotoView()));
         break;
       default:
         Navigator.pop(context);

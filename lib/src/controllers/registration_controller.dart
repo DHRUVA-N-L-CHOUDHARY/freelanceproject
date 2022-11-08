@@ -8,6 +8,7 @@ import 'package:freelanceproject/src/services/auth.dart';
 import 'package:freelanceproject/src/services/database.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_loading.dart';
 import 'package:freelanceproject/src/views/login_view.dart';
+import 'package:freelanceproject/src/views/upload_details_first_view.dart';
 import 'package:get/get.dart';
 
 class RegistrationController extends GetxController {
@@ -73,7 +74,7 @@ class RegistrationController extends GetxController {
 
           databaseMethods.addUserInfo(usermodel);
 
-          Get.offAll(LoginView());
+          Get.offAll(const UploaddetailsfirstView());
         }
       });
     }

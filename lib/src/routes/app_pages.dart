@@ -18,6 +18,7 @@ import 'package:freelanceproject/src/views/home_view.dart';
 import 'package:freelanceproject/src/views/login_view.dart';
 import 'package:freelanceproject/src/views/profile_page_view.dart';
 import 'package:freelanceproject/src/views/registration_view.dart';
+import 'package:freelanceproject/src/views/upload_details_first_view.dart';
 import 'package:get/get.dart';
 
 part 'app_routes.dart';
@@ -56,10 +57,10 @@ class AppPages {
         name: _Paths.DASHBOARD,
         page: () => const DashboardPageView(),
         binding: DashboardPageBinding()),
-    // GetPage(
-    //     name: _Paths.UPLOADPROFILEPHOTO,
-    //     page: () => const UploadProfilePhotoView(),
-    //     binding: UploadProfilePhotoBinding()),
+    GetPage(
+        name: _Paths.UPLOADDETAILS,
+        page: () => const UploaddetailsfirstView(),
+        binding: UploaddetailsfirstBinding()),
     GetPage(
         name: _Paths.CHANGEPASSWORD,
         page: () => const Changepasswordview(),

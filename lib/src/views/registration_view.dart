@@ -45,45 +45,31 @@ class _RegistrationViewState extends State<RegistrationView> {
                         height: 200,
                       ),
                     ),
-                    const Text(
-                      "Sponsor id:",
-                      style: TextStyle(fontFamily: 'Roboto'),
+                    const Padding(
+                      padding: EdgeInsets.only(top:8.0),
+                      child: Text(
+                        "Email-ID:",
+                        style: TextStyle(fontFamily: 'Roboto'),
+                      ),
                     ),
                     InputTextwidget(
-                      hintText: 'Enter Sponsor Id',
-                      option: true,
-                      controller: controller.sponsoridController,
-                    ),
-                    const Text(
-                      "Sponsor name:",
-                      style: TextStyle(fontFamily: 'Roboto'),
-                    ),
-                    InputTextwidget(
-                      hintText: 'Enter Sponsor name',
-                      option: true,
-                      controller: controller.sponsornameController,
-                    ),
-                    const Text(
-                      "First name:",
-                      style: TextStyle(fontFamily: 'Roboto'),
-                    ),
-                    InputTextwidget(
-                      hintText: 'Enter your First name',
-                      option: true,
-                      controller: controller.firstnameController,
-                    ),
-                    const Text(
-                      "Last name:",
-                      style: TextStyle(fontFamily: 'Roboto'),
-                    ),
-                    InputTextwidget(
-                      hintText: 'Last name',
-                      option: true,
-                      controller: controller.lastnameController,
-                    ),
-                    const Text(
-                      "Password:",
-                      style: TextStyle(fontFamily: 'Roboto'),
+                        hintText: 'Email-ID',
+                        option: true,
+                        controller: controller.emailController,
+                        emptyValidation: false,
+                        validation: (value) {
+                          if (value == "" || !GetUtils.isEmail(value)) {
+                            return "Email is not valid";
+                          } else {
+                            return null;
+                          }
+                        }),
+                    const Padding(
+                      padding: EdgeInsets.only(top:8.0),
+                      child: Text(
+                        "Password:",
+                        style: TextStyle(fontFamily: 'Roboto'),
+                      ),
                     ),
                     InputTextwidget(
                       hintText: 'Enter your password',
@@ -100,9 +86,12 @@ class _RegistrationViewState extends State<RegistrationView> {
                             : Icons.visibility_outlined),
                       ),
                     ),
-                    const Text(
-                      "Confirm Password:",
-                      style: TextStyle(fontFamily: 'Roboto'),
+                    const Padding(
+                      padding: EdgeInsets.only(top:8.0),
+                      child: Text(
+                        "Confirm Password:",
+                        style: TextStyle(fontFamily: 'Roboto'),
+                      ),
                     ),
                     InputTextwidget(
                       hintText: 'Confirm password',
@@ -119,56 +108,17 @@ class _RegistrationViewState extends State<RegistrationView> {
                             : Icons.visibility_outlined),
                       ),
                     ),
-                    const Text(
-                      "Email-ID:",
-                      style: TextStyle(fontFamily: 'Roboto'),
+
+                    Padding(
+                      padding: const EdgeInsets.only(top:40.0),
+                      child: DefaultButton(
+                          text: "Sign Up",
+                          margins: 5.0,
+                          press: () {
+                            controller.signUpWithEmailAndPassword();
+                            // Get.toNamed("/uploaddetails");
+                          }),
                     ),
-                    InputTextwidget(
-                        hintText: 'Email-ID',
-                        option: true,
-                        controller: controller.emailController,
-                        emptyValidation: false,
-                        validation: (value) {
-                          if (value == "" || !GetUtils.isEmail(value)) {
-                            return "Email is not valid";
-                          } else {
-                            return null;
-                          }
-                        }),
-                    const Text(
-                      "Phone number:",
-                      style: TextStyle(fontFamily: 'Roboto'),
-                    ),
-                    InputTextwidget(
-                      hintText: 'Phone number',
-                      controller: controller.phoneController,
-                      option: true,
-                      isDigitsOnly: true,
-                    ),
-                    const Text(
-                      "Invest amount:",
-                      style: TextStyle(fontFamily: 'Roboto'),
-                    ),
-                    InputTextwidget(
-                      hintText: 'curi 1000',
-                      controller: controller.investamountController,
-                      option: true,
-                    ),
-                    const Text(
-                      "Upload Pay slip:",
-                      style: TextStyle(fontFamily: 'Roboto'),
-                    ),
-                    InputTextwidget(
-                      hintText: 'No file attached',
-                      option: true,
-                    ),
-                    DefaultButton(
-                        text: "Sign Up",
-                        margins: 5.0,
-                        press: () {
-                          // controller.signUpWithEmailAndPassword();
-                          Get.toNamed("/dashboard");
-                        }),
                     const SizedBox(
                       height: 30,
                     ),
@@ -176,7 +126,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                         child: RichText(
                       // ignore: prefer_const_constructors
                       text: TextSpan(
-                        text: 'Already having an account',
+                        text: 'Already having an account?',
                         style: const TextStyle(
                             fontSize: 15.0,
                             color: Colors.black,

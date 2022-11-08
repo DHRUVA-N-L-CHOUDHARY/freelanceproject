@@ -17,6 +17,7 @@ abstract class Routes {
   static const UPLOADPROFILEPHOTO = _Paths.UPLOADPROFILEPHOTO;
   static const CHANGEPASSWORD = _Paths.CHANGEPASSWORD;
   static const EDITPROFILE = _Paths.EDITPROFILE;
+  static const UPLOADDETAILS = _Paths.UPLOADDETAILS;
 }
 
 abstract class _Paths {
@@ -32,5 +33,5 @@ abstract class _Paths {
   static const UPLOADPROFILEPHOTO = "/uploadprofilephoto";
   static const CHANGEPASSWORD = "/changepassword";
   static const EDITPROFILE = "/editprofile";
-
+  static const UPLOADDETAILS = "/uploaddetails";
 }

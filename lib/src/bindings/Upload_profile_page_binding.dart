@@ -1,10 +1,11 @@
-// import 'package:freelanceproject/src/controllers/Upload_profile_page_controller.dart';
-// import 'package:get/get.dart';
+import 'package:freelanceproject/src/controllers/Upload_details_first_controller.dart';
+import 'package:freelanceproject/src/controllers/Upload_profile_page_controller.dart';
+import 'package:get/get.dart';
 
 
-// class UploadProfilePhotoBinding extends Bindings {
-//   @override
-//   void dependencies() {
-//     Get.put<UploadProfilePhotocontroller>(UploadProfilePhotocontroller());
-//   }
-// }
+class UploaddetailsfirstBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put<UploaddetailsfirstController>(UploaddetailsfirstController());
+  }
+}

@@ -11,7 +11,6 @@ class ProfilepageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Sidemenubar(),
       appBar: AppBarTemplate(
         text: "Profile Page",
         option: 2,

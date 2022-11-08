@@ -15,7 +15,6 @@ class Changepasswordview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Sidemenubar(),
       appBar: const AppBarTemplate(
         text: "Change Password",
         option: 2,

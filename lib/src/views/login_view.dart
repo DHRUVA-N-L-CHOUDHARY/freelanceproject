@@ -80,8 +80,8 @@ class _LoginViewState extends State<LoginView> {
                         text: "Log in",
                         margins: 5.0,
                         press: () {
-                          Get.toNamed("/dashboard");
-                          // controller.signInWithEmailAndPassword();
+                          // Get.toNamed("/dashboard");
+                          controller.signInWithEmailAndPassword();
                         }),
                     const SizedBox(
                       height: 30,
@@ -106,7 +106,7 @@ class _LoginViewState extends State<LoginView> {
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () async {
                                   // Get.toNamed("/profilepage");
-                                  Get.toNamed("/registration");
+                                  Get.offAllNamed("/registration");
                                 }),
                         ],
                       ),

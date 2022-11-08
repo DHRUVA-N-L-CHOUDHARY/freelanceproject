@@ -25,17 +25,17 @@ class DashboardPageView extends StatelessWidget {
        drawer: const Sidemenubar(),
       appBar: const AppBarTemplate(
         text: "Dashboard",
-        option: 2,
+        option: 3,
         optionbutton: 1,
       ),
       body: ListView(
         // ignore: prefer_const_literals_to_create_immutables
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: const ProfileSection(),
+          const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: ProfileSection(),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           const CustomTableDashboard(),
