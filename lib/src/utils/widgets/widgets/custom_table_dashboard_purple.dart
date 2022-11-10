@@ -38,6 +38,15 @@ class CustomTableDashboardPurple extends StatelessWidget {
             color: kPrimaryColor,
             textcolor: Colors.white),
       ]),
+      TableRow(children: [
+        CustomTableElement(
+            elementpic: connectdashboard,
+            option: true,
+            elementtext: "Pending Amount \n0 INR",
+            color: kPrimaryColor,
+            textcolor: Colors.white),
+        Text(""),
+      ]),
     ]);
   }
 }

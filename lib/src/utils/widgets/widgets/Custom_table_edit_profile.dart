@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:freelanceproject/src/utils/constants/constants/size_config.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/Custom_form_field.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/Custom_radio_list_tile.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_table_element.dart';
@@ -16,11 +17,11 @@ class CustomTableEditProfileView extends StatelessWidget {
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       // ignore: prefer_const_literals_to_create_immutables
       columnWidths: {
-        0: const FlexColumnWidth(70),
-        1: const FlexColumnWidth(20),
-        2: const FlexColumnWidth(120)
+        0: FlexColumnWidth(SizeConfig(context).getProportionateScreenWidth(70)),
+        1: FlexColumnWidth(SizeConfig(context).getProportionateScreenWidth(20)),
+        2: FlexColumnWidth(SizeConfig(context).getProportionateScreenWidth(120))
       },
-      defaultColumnWidth: const FixedColumnWidth(100.0),
+      // defaultColumnWidth: const FixedColumnWidth(100.0),
       children: [
         TableRow(children: [
           const CustomTextfield(
@@ -54,7 +55,7 @@ class CustomTableEditProfileView extends StatelessWidget {
           ),
           const Text(":"),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(SizeConfig(context).getProportionatePadding()),
             child: SizedBox(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
