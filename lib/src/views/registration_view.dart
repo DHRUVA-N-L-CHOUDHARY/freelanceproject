@@ -141,7 +141,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () async {
-                                  Get.toNamed("/login");
+                                  Get.offAllNamed("/home");
                                 }),
                         ],
                       ),

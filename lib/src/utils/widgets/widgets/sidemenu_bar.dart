@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freelanceproject/src/controllers/home_controller.dart';
+import 'package:freelanceproject/src/controllers/login_controller.dart';
+import 'package:freelanceproject/src/controllers/logout_controller.dart';
 import 'package:freelanceproject/src/utils/constants/constants/strings.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/menu_item.dart';
 import 'package:freelanceproject/src/views/Change_password_view.dart';
@@ -10,12 +12,14 @@ import 'package:freelanceproject/src/views/dashboard_view.dart';
 import 'package:freelanceproject/src/views/profile_page_view.dart';
 import 'package:get/get.dart';
 
+import '../../../controllers/network_client_controller.dart';
+
 class Sidemenubar extends StatelessWidget {
   const Sidemenubar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    HomeController homeController = Get.find<HomeController>();
+    LogoutController logoutController = Get.put(LogoutController());
     return Drawer(
       child: Material(
         color: Colors.black,
@@ -68,11 +72,10 @@ class Sidemenubar extends StatelessWidget {
               DrawerItem(
                   name: "Logout",
                   icon: Icons.logout_outlined,
-                  onPressed: (() {
-                    void logout() async {
-                      await homeController.firebaseAuth.signOut();
-                    }
-                    Get.offNamed("/login");
+                  onPressed: (() async {
+                    await logoutController.logoutUser().then((value) {
+                      Get.offAllNamed("/home");
+                    });
                   })),
             ],
           ),

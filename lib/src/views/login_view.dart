@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:freelanceproject/src/controllers/login_controller.dart';
@@ -18,7 +16,6 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  LoginController controller = Get.put(LoginController());
   @override
   Widget build(BuildContext context) {
     return GetBuilder<LoginController>(builder: (controller) {
@@ -105,7 +102,6 @@ class _LoginViewState extends State<LoginView> {
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () async {
-                                  // Get.toNamed("/profilepage");
                                   Get.offAllNamed("/registration");
                                 }),
                         ],

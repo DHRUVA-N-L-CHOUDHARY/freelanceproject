@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:ffi';
 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -15,8 +13,6 @@ class Usermodel {
   String? sponsorname;
   String? firstname;
   String? lastname;
-  String? password;
-  String? confirmpassword;
   String? email;
   String? phone;
   String? investamount;
@@ -27,8 +23,6 @@ class Usermodel {
     this.sponsorname,
     this.firstname,
     this.lastname,
-    this.password,
-    this.confirmpassword,
     this.email,
     this.phone,
     this.investamount,

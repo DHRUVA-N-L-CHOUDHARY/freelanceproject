@@ -1,4 +1,3 @@
-// ignore_for_file: constant_identifier_names
 
 import 'package:freelanceproject/src/bindings/Upload_profile_page_binding.dart';
 import 'package:freelanceproject/src/bindings/change_password_binding.dart';
@@ -26,7 +25,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGIN;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(

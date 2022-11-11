@@ -60,13 +60,10 @@ class RegistrationController extends GetxController {
           await PreferenceUtils.setString(
               keyUserName, userNameController.text.toString());
           await PreferenceUtils.setString(keyUserEmail, emailController.text);
-
           usermodel?.sponsorid = sponsoridController.text;
           usermodel?.sponsorname = sponsornameController.text;
           usermodel?.firstname = firstnameController.text;
           usermodel?.lastname = lastnameController.text;
-          usermodel?.password = passwordController.text;
-          usermodel?.confirmpassword = confirmpasswordController.text;
           usermodel?.email = emailController.text;
           usermodel?.phone = phoneController.text;
           usermodel?.investamount = investamountController.text;
