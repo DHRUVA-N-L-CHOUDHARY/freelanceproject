@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:freelanceproject/src/controllers/home_controller.dart';
 import 'package:get/get.dart' hide Response;
 import 'package:get_storage/get_storage.dart';
 
@@ -9,7 +10,6 @@ import 'login_controller.dart';
 class DioAuthClient {
   final Dio _dio = Dio();
   final _baseUrl = 'http://172.70.98.107:5000';
-  LoginController authController = Get.find();
   String? tokenId = GetStorage().read('tokenId');
 
   DioAuthClient() {
@@ -17,7 +17,7 @@ class DioAuthClient {
   }
 
   Future<bool> login() async {
-    await authController.storeToken();
+    //await authController.storeToken();
     tokenId = GetStorage().read('tokenId');
     try {
       Response response = await _dio.post('$_baseUrl/auth/signin',
@@ -42,9 +42,10 @@ class DioAuthClient {
 
   Future<bool> signup(Usermodel profile) async {
     var data = profile.toJson();
-    await authController.storeToken();
+   // await authController.storeToken();
     tokenId = GetStorage().read('tokenId');
     data["firebaseID"] = tokenId;
+    print(data);
     try {
       Response response = await _dio.post(
         '$_baseUrl/auth/signup',

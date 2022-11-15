@@ -1,4 +1,3 @@
-
 import 'package:freelanceproject/src/bindings/Upload_profile_page_binding.dart';
 import 'package:freelanceproject/src/bindings/change_password_binding.dart';
 import 'package:freelanceproject/src/bindings/dashboard_binding.dart';
@@ -15,6 +14,7 @@ import 'package:freelanceproject/src/views/dashboard_view.dart';
 import 'package:freelanceproject/src/views/forgot_password_view.dart';
 import 'package:freelanceproject/src/views/home_view.dart';
 import 'package:freelanceproject/src/views/login_view.dart';
+import 'package:freelanceproject/src/views/navigation_bar_view.dart';
 import 'package:freelanceproject/src/views/profile_page_view.dart';
 import 'package:freelanceproject/src/views/registration_view.dart';
 import 'package:freelanceproject/src/views/upload_details_first_view.dart';
@@ -25,7 +25,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.LOGIN;
 
   static final routes = [
     GetPage(
@@ -68,5 +68,9 @@ class AppPages {
         name: _Paths.EDITPROFILE,
         page: () => const EditprofileView(),
         binding: EditprofileBinding()),
+    GetPage(
+        name: _Paths.NAVIGATION,
+        page: () => DashboardPage(),
+        binding: DashboardPageBinding()),
   ];
 }

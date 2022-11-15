@@ -9,9 +9,11 @@ import 'package:freelanceproject/src/utils/widgets/widgets/custom_button.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/imagewidget.dart';
 import 'package:get/get.dart';
 
-class ForgotPasswordView extends GetView<ForgotPasswordController> {
+class ForgotPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+ForgotPasswordController controller = ForgotPasswordController();
+
     return Scaffold(
       appBar: const AppBarTemplate(
         text: "Forgot Password",
@@ -31,12 +33,15 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                 InputTextwidget(
                   hintText: 'Enter your email',
                   icondata: Icons.mail_outline,
+                  controller: controller.forgot,
                   option: false,
                   labelText: 'Enter your email',
                   // controller: ,
                 ),
                 DefaultButton(
-                    text: "Reset Password", margins: 5.0, press: () {}),
+                    text: "Reset Password", margins: 5.0, press: () {
+                      controller.resetPassword(controller.forgot.text);
+                    }),
               ],
             ),
           ),

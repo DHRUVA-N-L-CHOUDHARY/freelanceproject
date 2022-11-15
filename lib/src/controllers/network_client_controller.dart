@@ -7,7 +7,7 @@ import 'package:get_storage/get_storage.dart';
 
 class DioClient {
   final Dio _dio = Dio();
-  final _baseUrl = 'https://vyam-bhog-server.herokuapp.com';
+  final _baseUrl = 'http://172.70.107.66:5000';
 
   DioClient() {
     _dio.interceptors
@@ -17,6 +17,7 @@ class DioClient {
 
   Future<Usermodel> getUser() async {
     Usermodel user = Usermodel();
+    bool result = false;
     try {
       Response userData =
       await _dio.get('$_baseUrl/user/user-details');
@@ -31,21 +32,21 @@ class DioClient {
     return user;
   }
   //
-  // Future<List<Itemmodel>> fetchAllMenuItems() async {
-  //   List<Itemmodel> itemDetails = [];
-  //   try {
-  //     Response itemDetailsData =
-  //     await _dio.get('$_baseUrl/product/fetch-all');
-  //     var list = itemDetailsData.data["data"]["products"] as List;
-  //     itemDetails = list.map((e) => Itemmodel.fromJson(e)).toList();
-  //   } on DioError catch (e) {
-  //     if (e.response != null) {
-  //       print(e.response);
-  //     } else {
-  //     }
-  //   }
-  //   return itemDetails;
-  // }
+  Future<List<Usermodel>> fetchUserdetails() async {
+    List<Usermodel> userDetails = [];
+    try {
+      Response userDetailsData =
+      await _dio.get('$_baseUrl/user/user-details');
+      var list = userDetailsData.data["data"] as List;
+      userDetails = list.map((e) => Usermodel.fromJson(e)).toList();
+    } on DioError catch (e) {
+      if (e.response != null) {
+        print(e.response);
+      } else {
+      }
+    }
+    return userDetails;
+  }
   //
   // Future<List<CartModel>> fetchCart() async {
   //   List<CartModel> cartDetails = [];
@@ -84,22 +85,24 @@ class DioClient {
   //   return cartDetails;
   // }
   //
-  // Future<List<CartModel>> deleteFromCart() async {
-  //   List<CartModel> cartDetails = [];
-  //   try {
-  //     Response cartDetailsData =
-  //     await _dio.post('$_baseUrl/cart/delete-product');
-  //     var list = cartDetailsData.data["products"] as List;
-  //     cartDetails = list.map((e) => CartModel.fromJson(e)).toList();
-  //   } on DioError catch (e) {
-  //     if (e.response != null) {
-  //       print(e.response);
-  //     } else {
-  //
-  //     }
-  //   }
-  //   return cartDetails;
-  // }
+  Future<List<Usermodel>> postuserdetails(Usermodel usermodel) async {
+    List<Usermodel> userDetails = [];
+    try {
+      print(usermodel.firstname);
+      Response userDetailsData =
+      await _dio.post('$_baseUrl/auth/user-details');
+      var list = userDetailsData.data["user"] as List;
+      userDetails = list.map((e) => Usermodel.fromJson(e)).toList();
+      print(userDetails);
+    } on DioError catch (e) {
+      if (e.response != null) {
+        print(e.response);
+      } else {
+  
+      }
+    }
+    return userDetails;
+  }
   //
   // Future<double> fetchTotal() async {
   //   try {

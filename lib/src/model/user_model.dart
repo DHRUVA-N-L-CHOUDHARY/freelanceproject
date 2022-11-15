@@ -16,6 +16,20 @@ class Usermodel {
   String? email;
   String? phone;
   String? investamount;
+  String? profileid;
+  String? profilePic;
+  String? dob;
+  String? gender;
+  String? bankname;
+  String? branch;
+  String? accountnum;
+  String? ifsccode;
+  String? address;
+  String? country;
+  String? state;
+  String? city;
+  String? code;
+  String? pincode;
 
   Usermodel({
     this.userid,
@@ -26,6 +40,20 @@ class Usermodel {
     this.email,
     this.phone,
     this.investamount,
+    this.profileid,
+    this.accountnum,
+    this.address,
+    this.bankname,
+    this.branch,
+    this.city,
+    this.code,
+    this.country,
+    this.profilePic,
+    this.dob,
+    this.gender,
+    this.ifsccode,
+    this.pincode,
+    this.state
   });
   factory Usermodel.fromJson(Map<String, dynamic> json) =>
       _$UsermodelFromJson(json);

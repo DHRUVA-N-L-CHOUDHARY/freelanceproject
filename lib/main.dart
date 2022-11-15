@@ -1,8 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:freelanceproject/firebase_options.dart';
-import 'package:freelanceproject/src/bindings/home_binding.dart';
-import 'package:freelanceproject/src/controllers/login_controller.dart';
 import 'package:get/get.dart';
 
 import 'src/routes/app_pages.dart';

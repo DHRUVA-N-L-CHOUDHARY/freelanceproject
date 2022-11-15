@@ -12,7 +12,7 @@ import 'package:freelanceproject/src/views/upload_details_first_view.dart';
 import 'package:get/get.dart';
 
 class RegistrationController extends GetxController {
-  final formKey = GlobalKey<FormState>();
+  final registrationformKey = GlobalKey<FormState>();
   AuthService authService = AuthService();
   DatabaseMethods databaseMethods = DatabaseMethods();
 
@@ -43,7 +43,7 @@ class RegistrationController extends GetxController {
   }
 
   signUpWithEmailAndPassword() async {
-    if (formKey.currentState!.validate()) {
+    if (registrationformKey.currentState!.validate()) {
       Get.focusScope?.unfocus();
       showLoader(Get.context);
       await authService
@@ -55,22 +55,6 @@ class RegistrationController extends GetxController {
           if (kDebugMode) {
             print("result : $result");
           }
-
-          await PreferenceUtils.setString(keyUserId, "${result.uid}");
-          await PreferenceUtils.setString(
-              keyUserName, userNameController.text.toString());
-          await PreferenceUtils.setString(keyUserEmail, emailController.text);
-          usermodel?.sponsorid = sponsoridController.text;
-          usermodel?.sponsorname = sponsornameController.text;
-          usermodel?.firstname = firstnameController.text;
-          usermodel?.lastname = lastnameController.text;
-          usermodel?.email = emailController.text;
-          usermodel?.phone = phoneController.text;
-          usermodel?.investamount = investamountController.text;
-          usermodel?.userid = result.uid;
-
-          databaseMethods.addUserInfo(usermodel);
-
           Get.offAll(const UploaddetailsfirstView());
         }
       });

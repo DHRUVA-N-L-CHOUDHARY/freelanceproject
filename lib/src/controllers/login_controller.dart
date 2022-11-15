@@ -1,5 +1,3 @@
-
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -13,6 +11,7 @@ import 'package:freelanceproject/src/utils/widgets/widgets/custom_loading.dart';
 import 'package:freelanceproject/src/views/dashboard_view.dart';
 import 'package:freelanceproject/src/views/home_view.dart';
 import 'package:freelanceproject/src/views/login_view.dart';
+import 'package:freelanceproject/src/views/navigation_bar_view.dart';
 import 'package:freelanceproject/src/views/registration_view.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -21,8 +20,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'home_controller.dart';
 
 class LoginController extends GetxController {
-
-  final formKey = GlobalKey<FormState>();
+  final loginformKey = GlobalKey<FormState>();
   AuthService authService = AuthService();
   String? tokenId;
   bool isLoading = false;
@@ -32,7 +30,6 @@ class LoginController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  HomeController homeController = Get.find<HomeController>();
   bool isSecure = true;
   @override
   void onInit() {
@@ -46,12 +43,14 @@ class LoginController extends GetxController {
 
   Future<void> signInWithEmailAndPassword() async {
     Get.focusScope?.unfocus();
-    if (formKey.currentState!.validate()) {
+    if (loginformKey.currentState!.validate()) {
       showLoader(Get.context);
       await authService
           .signInWithEmailAndPassword(
               emailController.text, passwordController.text)
           .then((result) async {
+        tokenId = await firebaseAuth.currentUser?.getIdToken(true);
+        GetStorage().write('tokenId', tokenId);
         Get.back();
         if (result != null) {
           if (kDebugMode) {
@@ -77,12 +76,11 @@ class LoginController extends GetxController {
           // await PreferenceUtils.setString(
           //     keyUserName, "${userData["userName"]}");
 
-          Get.offAll(const DashboardPageView());
+          Get.offAll(const DashboardPage());
         }
       });
     }
   }
-
 
   Future<void> storeToken() async {
     tokenId = await firebaseAuth.currentUser?.getIdToken(true);

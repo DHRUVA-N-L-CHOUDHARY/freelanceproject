@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:freelanceproject/src/controllers/home_controller.dart';
 import 'package:freelanceproject/src/controllers/login_controller.dart';
 import 'package:freelanceproject/src/utils/constants/constants/colors.dart';
 import 'package:freelanceproject/src/utils/constants/constants/strings.dart';
@@ -25,7 +26,7 @@ class _LoginViewState extends State<LoginView> {
           option: 1,
         ),
         body: Form(
-          key: controller.formKey,
+          key: controller.loginformKey,
           child: Center(
             child: Container(
               margin: const EdgeInsets.only(top: 20.0),
@@ -85,7 +86,6 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     Center(
                         child: RichText(
-                      // ignore: prefer_const_constructors
                       text: TextSpan(
                         text: 'Don\'t have a account?',
                         style: const TextStyle(

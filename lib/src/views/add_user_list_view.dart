@@ -10,7 +10,7 @@ class AddUserListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const AppBarTemplate(
-          option: 2,
+          option: 1,
           text: "Add User List View",
         ),
         body: ListView(children: <Widget>[

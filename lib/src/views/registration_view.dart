@@ -29,7 +29,7 @@ class _RegistrationViewState extends State<RegistrationView> {
           option: 1 ,
         ),
         body: Form(
-          key: controller.formKey,
+          key: controller.registrationformKey,
           child: Center(
             child: Container(
               margin: const EdgeInsets.only(top: 20.0),
@@ -37,7 +37,6 @@ class _RegistrationViewState extends State<RegistrationView> {
                 child: ListView(
                   padding: const EdgeInsets.all(8.0),
                   children: [
-                    // ignore: prefer_const_constructors
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: const buildCard(
@@ -141,7 +140,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () async {
-                                  Get.offAllNamed("/home");
+                                  Get.offAllNamed("/login");
                                 }),
                         ],
                       ),

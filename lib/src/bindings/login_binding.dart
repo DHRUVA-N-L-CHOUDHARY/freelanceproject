@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:freelanceproject/src/controllers/login_controller.dart';
 import 'package:get/get.dart';
 

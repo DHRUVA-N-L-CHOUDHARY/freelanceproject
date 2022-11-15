@@ -1,11 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:freelanceproject/src/utils/constants/constants/colors.dart';
 import 'package:freelanceproject/src/utils/constants/constants/size_config.dart';
-import 'package:freelanceproject/src/utils/constants/constants/strings.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/custom_text_field.dart';
-import 'package:freelanceproject/src/utils/widgets/widgets/imagewidget.dart';
+
 
 class CustomTableElement extends StatelessWidget {
   final String elementpic;
@@ -14,6 +15,8 @@ class CustomTableElement extends StatelessWidget {
   final Color? color;
   bool? option;
   final Color? textcolor;
+  final double? inputheight;
+  final double? inputwidth;
   CustomTableElement(
       {super.key,
       required this.elementpic,
@@ -21,25 +24,32 @@ class CustomTableElement extends StatelessWidget {
       this.color = kPrimaryColor,
       this.option = false,
       this.textcolor = const Color.fromARGB(0, 0, 0, 0),
-      this.cusicon = Icons.wallet});
+      this.cusicon = Icons.wallet,
+      this.inputheight = 70,
+      this.inputwidth = 190});
 
   @override
   Widget build(BuildContext context) {
     if (option == true) {
       return Column(children: [
         Padding(
-          padding: EdgeInsets.all(SizeConfig(context).getProportionatePadding()),
+          padding:
+              EdgeInsets.all(SizeConfig(context).getProportionatePadding()),
           child: Container(
-            height: SizeConfig(context).getProportionateScreenHeight(70),
-            width: SizeConfig(context).getProportionateScreenWidth(190),
-            padding: EdgeInsets.all(SizeConfig(context).getProportionatePadding()),
+            height: SizeConfig(context)
+                .getProportionateScreenHeight(inputheight ?? 0),
+            width: SizeConfig(context)
+                .getProportionateScreenWidth(inputwidth ?? 0),
+            padding:
+                EdgeInsets.all(SizeConfig(context).getProportionatePadding()),
             decoration: BoxDecoration(
                 color: color,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             child: Row(children: [
               //  buildCard(inputpic: elementpic, height: 20),
               Padding(
-                padding: EdgeInsets.all(SizeConfig(context).getProportionatePadding()),
+                padding: EdgeInsets.all(
+                    SizeConfig(context).getProportionatePadding()),
                 child: CustomTextfield(
                   displaytxt: elementtext,
                   color: textcolor,
@@ -52,14 +62,23 @@ class CustomTableElement extends StatelessWidget {
     } else {
       return Column(children: [
         Padding(
-          padding: EdgeInsets.all(SizeConfig(context).getProportionatePadding()),
+          padding: EdgeInsets.all(
+            SizeConfig(context).getProportionatePadding(),
+          ),
           child: Container(
-            height: SizeConfig(context).getProportionateScreenHeight(70),
-            width: SizeConfig(context).getProportionateScreenWidth(190),
+            height: SizeConfig(context)
+                .getProportionateScreenHeight(inputheight ?? 0),
+            width: SizeConfig(context)
+                .getProportionateScreenWidth(inputwidth ?? 0),
             padding: EdgeInsets.all(3.0),
             decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.all(Radius.circular(SizeConfig(context).getProportionateroundess()))),
+              color: color,
+              borderRadius: BorderRadius.all(
+                Radius.circular(
+                  SizeConfig(context).getProportionateroundess(),
+                ),
+              ),
+            ),
             child: Row(children: [
               Icon(
                 cusicon,

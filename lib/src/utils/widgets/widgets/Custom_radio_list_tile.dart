@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:freelanceproject/src/utils/constants/constants/colors.dart';
 
 class CustomRadioListtile extends StatefulWidget {
-  const CustomRadioListtile({super.key});
+  final Function(String) onChanged;
+  const CustomRadioListtile({super.key, required this.onChanged});
 
   @override
   State<CustomRadioListtile> createState() => _CustomRadioListtileState();
@@ -28,6 +29,7 @@ class _CustomRadioListtileState extends State<CustomRadioListtile> {
                 setState(() {
                   radioButtonItem = 'Male';
                   id = 1;
+                  widget.onChanged(radioButtonItem);
                 });
               },
             ),
@@ -43,6 +45,7 @@ class _CustomRadioListtileState extends State<CustomRadioListtile> {
                 setState(() {
                   radioButtonItem = 'Female';
                   id = 2;
+                  widget.onChanged(radioButtonItem);
                 });
               },
             ),

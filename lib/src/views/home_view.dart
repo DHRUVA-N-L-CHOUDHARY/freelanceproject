@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:freelanceproject/src/views/dashboard_view.dart';
@@ -17,18 +18,21 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  DioAuthClient dioClient = DioAuthClient();
-  Future<Widget> _login() async => await dioClient.login().then((value) async {
-    if(value) {
-      return const DashboardPageView();
-    } else {
+  Future<Widget> _login() async {
       if(FirebaseAuth.instance.currentUser != null) {
+        QuerySnapshot _querySnapshot = await FirebaseFirestore.instance
+        .collection("users")
+        .where("email", isEqualTo: FirebaseAuth.instance.currentUser?.email)
+        .get();
+        if(_querySnapshot.docs.isEmpty) {
         return RegistrationView();
+        } else {
+          return DashboardPageView();
+        }
       } else {
         return LoginView();
       }
-    }
-  });
+  }
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<Widget>(

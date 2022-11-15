@@ -23,7 +23,7 @@ class _DatePickerState extends State<DatePicker> {
         
         initialDate: selectedDate,
         initialDatePickerMode: DatePickerMode.day,
-        firstDate: widget.initialDate ?? DateTime(2015),
+        firstDate: widget.initialDate ?? DateTime(1970),
         lastDate: widget.finalDate ?? DateTime.now());
     if (picked != null) {
       setState(() {

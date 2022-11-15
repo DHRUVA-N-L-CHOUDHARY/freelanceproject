@@ -1,10 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freelanceproject/src/utils/widgets/widgets/app_utils.dart';
+import 'package:get_storage/get_storage.dart';
 
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  String tokenId = "";
+  Future<void> storeToken() async {
+    tokenId = await _auth.currentUser?.getIdToken(true) ?? "";
+    GetStorage().write('tokenId', tokenId);
+    print(tokenId);
+  }
 
   Future<User?> signInWithEmailAndPassword(
       String email, String password) async {
@@ -13,7 +20,7 @@ class AuthService {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       user = result.user;
-
+      storeToken();
       return user!;
     } on FirebaseAuthException catch (e) {
       if (kDebugMode) {
@@ -55,6 +62,7 @@ class AuthService {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       user = result.user;
+      storeToken();
       return user;
     } on FirebaseAuthException catch (e) {
       switch (e.code) {

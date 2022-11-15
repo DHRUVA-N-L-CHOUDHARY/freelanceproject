@@ -44,9 +44,9 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
       return AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(null),
+          onPressed: () => Navigator.of(context).pop(),
         ),
-          automaticallyImplyLeading: false,
+        automaticallyImplyLeading: false,
         backgroundColor: backcolor,
         title: Text(
           text,
@@ -68,23 +68,24 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
         );
       } else {
         return AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(null),
-            padding: const EdgeInsets.all(0.0),
+          // leading: IconButton(
+          //   icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+          //   onPressed: () => Navigator.of(context).pop(null),
+          //   padding: const EdgeInsets.all(0.0),
+          // ),
+          title: Text(
+            text,
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20),
           ),
           automaticallyImplyLeading: false,
-          title: Image.asset(
-            appbarpic!,
-            height: 70,
-            width: 70,
-          ),
           backgroundColor: backcolor,
           actions: <Widget>[
             IconButton(
               icon: Icon(requiredicon),
-              color: kPrimaryColor,
-              onPressed: (() {}),
+              color: Colors.white,
+              onPressed:  onPressed as void Function()?
+              ,
             ),
           ],
           centerTitle: true,

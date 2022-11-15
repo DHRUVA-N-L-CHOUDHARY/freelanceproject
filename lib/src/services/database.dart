@@ -1,24 +1,31 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
+import 'package:freelanceproject/src/model/user_model.dart';
 import 'package:freelanceproject/src/providers/PreferenceUtils.dart';
 
-
 class DatabaseMethods {
-  Future<void> addUserInfo(userData) async {
-    FirebaseFirestore.instance
-        .collection("users")
-        .add(userData)
-        .catchError((e) {
-      if (kDebugMode) {
-        print(e.toString());
-      }
-    });
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  Future<dynamic> addUserInfo(Usermodel userData) {
+    return users
+        .add(userData.toJson())
+        .then((value) => print("User Added"))
+        .catchError((error) => print("Failed to add user: $error"));
+  }
+  Future<dynamic> UpdateuserInfo(Usermodel userData) async {
+    QuerySnapshot _querySnapshot = await users.where("email",isEqualTo: FirebaseAuth.instance.currentUser?.email).get();
+    if(_querySnapshot.docs.isNotEmpty) {
+      print(_querySnapshot.docs[0].reference);
+      return await _querySnapshot.docs[0].reference.update(userData.toJson()).then((value) => print("User Updated")).catchError((error) => print("Failed to update user: $error"));
+    }
   }
 
-  getUserInfo(String email) async {
+     getUserInfo() async {
     return FirebaseFirestore.instance
         .collection("users")
-        .where("userEmail", isEqualTo: email)
+        .where("email", isEqualTo: FirebaseAuth.instance.currentUser?.email)
         .get()
         .catchError((e) {
       if (kDebugMode) {
@@ -114,3 +121,5 @@ class DatabaseMethods {
         .snapshots();
   }
 }
+
+
